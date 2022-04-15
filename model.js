@@ -44,14 +44,12 @@ function load_data() {
       for (var j = 0; j < a.length; j++){
         answer[j] = a[j];
         scoreDisplay[j].innerHTML = (answer[j]*100).toFixed(1) + "%";
-        console.log(answer[j]);
-        
       }
 
-      if (Math.max(answer) == answer[2]){
-        document.getElementById("penisConclusion").innerHTML = "There probably aren't any penises."
+      if (Math.max.apply(null, answer) == answer[2]){
+        document.getElementById("penisConclusion").innerHTML = "There probably aren't any penises.";
       } else {
-        document.getElementById("penisConclusion").innerHTML = "There probably is a penis."
+        document.getElementById("penisConclusion").innerHTML = "There probably is a penis.";
       }
 
     })
