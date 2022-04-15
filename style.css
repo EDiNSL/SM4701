@@ -1,0 +1,335 @@
+html {
+    scroll-behavior: smooth;
+  }
+  
+
+/* Remove annoying margins around the webiste.*/
+body{
+    margin: 0;
+    background-color: rgb(20, 20, 20);
+    
+}
+
+
+#loader {
+	width: 0.1px;
+	height: 0.1px;
+	opacity: 0;
+	overflow: hidden;
+	position: absolute;
+	z-index: -1;
+}
+
+#upload {
+    font-size: 1.25em;
+    font-weight: 700;
+    color: white;
+    background-color: black;
+    display: inline-block;
+}
+
+
+#upload:hover {
+    background-color: rgb(255, 0, 0)!important;
+}
+
+/* The first "page" the user sees */
+.header {
+    background-color: rgb(219, 219, 219);
+    background-size: 100vmax;
+    width: auto;
+    height: 100vh;
+    padding-left: 10vmin;
+    padding-right: 10vmin;
+    top: 0; 
+    left: 0; 
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#imageCanvas {
+    width: 50vmin;
+    height: 50vmin;
+    border: 3px solid #FF00FF;
+    
+  }
+
+
+.header #title{
+    display: inline;
+    position: relative;
+    color: rgb(117, 117, 117);
+    margin:0px;
+    padding:0px;
+    text-align: center;
+    font-size: 8rem;
+
+}
+
+.header #subtitle{
+    display: inline;
+    position: relative;
+    text-align: center;
+    color: rgb(151, 151, 151);
+    margin:0px;
+    padding:0px;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-size: 2rem;
+
+}
+
+.footer {
+    background-color: black;
+    background-image: url("david_mod.jpg");
+    background-size: 100vmax;
+    filter: grayscale(100%);
+    width: auto;
+    height: auto;
+    padding: 10vmin;
+    top: 0; 
+    left: 0; 
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: left;
+    background-position-y: bottom; 
+}
+
+.footer #title{
+    display: inline;
+    position: relative;
+    color: rgb(200, 200, 200);
+    margin:0px;
+    padding:0px;
+    
+    font-size: 5rem; 
+    text-align: left;
+
+}
+
+.footer #subtitle{
+    display: inline;
+    position: relative;
+    color: rgb(200, 200, 200);
+    margin:0px;
+    padding:0px;
+    
+    font-size: 1.5rem;
+    text-align: left;
+
+}
+
+
+
+/* Maing containter holding all graph containers */
+#mainContainer {
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    
+}
+
+/* Graph container - hold title (h1) + graph space (.graph)
+graph space consitutes of .imgContainer and .textContainer
+*/
+.graphSection {
+    margin-top:5vh;
+    margin-bottom:5vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background-color: rgb(20, 20, 20);
+    width: auto;
+    height: 100vh; 
+    padding-left:10%;
+    padding-right:10%;
+    top: 0; 
+    left: 0; 
+}
+
+.graphSection h1 {
+    margin:0px;
+    padding-bottom: 2vh;
+    color: rgb(200, 200, 200);
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-size: 6rem;
+    text-align: left;
+    
+}
+
+.graph {
+    display: flex;
+    justify-content: center;
+}
+
+/* Subparts of each individual graph container
+Edit % in .imgContainer and .textContainer to adjust proportions of graphc/text description 
+Their part is .graph that is set to flex and they are placed within it.
+*/
+.imgContainer {
+    padding: 0px;
+    height: auto;
+    text-align: center; /* Aligns image in the center of this div */
+}
+#compare{
+    width: 60vw;
+    height: auto;
+}
+
+#compare img{
+    width: auto;
+    height: auto;
+}
+
+.imgContainer img{ /* Modify this to control size of the picture */
+    width:auto;
+    height:60vmin;
+}
+
+.textContainer {
+    flex: 50%;
+    margin: 2em;
+    padding-left: 1rem;
+    padding-right: 1rem;
+}
+
+.textContainer p,a {
+    font-size: 2rem;
+    color: rgb(133, 133, 133);
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+.hideAnimation
+{
+    padding: 0px;
+    opacity:0;
+}
+
+#highlight {
+    color: rgb(255, 120, 255);
+}
+
+#hi1{
+    text-decoration: underline;
+    text-decoration-color: rgb(100, 100, 100);
+}
+
+#hi2{
+    text-decoration: underline;
+    text-decoration-color: rgb(180, 180, 180);
+}
+
+#hi3{
+    text-decoration: underline;
+    text-decoration-color:  rgb(255, 120, 255);
+    color: rgb(150, 150, 150);
+}
+@media only screen and (max-height: 700px) {
+    .graphSection {
+        height: auto; 
+    }
+}
+
+@media (max-aspect-ratio: 4/3) {
+
+    .graphSection {
+        height:auto;
+    }
+
+  }
+
+@media only screen and (max-width: 1920px) {
+
+    
+    
+
+    .imgContainer img{ /* Modify this to control size of the picture */
+        width: 45vw;
+        height: auto;
+    }
+ 
+    .textContainer {    
+        margin-right: 0px;
+        padding-right: 0px;
+    } 
+
+    .textContainer p,a {
+        margin-left: 0px;
+    }
+
+    .graphSection h1 {
+        font-size: 4rem;
+    }
+
+    .header #title{
+        font-size: 4rem;
+    }
+
+    .textContainer p,a {
+        font-size: 1.5rem;
+    }
+    
+    #compare {
+        width:48vw;
+    }
+}
+
+
+@media only screen and (max-width: 1500px) {
+    
+    #compare {
+        width:100%;
+    }
+    .graphSection {
+        margin-top:15vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        background-color: rgb(20, 20, 20);
+        align-items: left;
+        height: auto; 
+        padding-left:10%;
+        padding-right:10%;
+        top: 0; 
+        left: 0; 
+    }
+
+    .graph {
+        flex-direction: column;
+        align-items: left;
+    }
+
+    .imgContainer{
+        padding: 0px;
+        width:80vmin;
+        height:auto;
+        text-align: left;
+    }
+
+    .textContainer {    
+        margin-left: 0px;
+    }
+
+    .imgContainer img{ /* Modify this to control size of the picture */
+        width:100%;
+        height:auto;
+    }
+    .textContainer p,a {
+        margin-left: 0px;
+    }
+
+    .graphSection h1 {
+        font-size: 3.5rem;
+    }
+
+    .header #title{
+        font-size: 4rem;
+    }
+    .header {
+        background-position-x: center;
+    }
+    
+}
