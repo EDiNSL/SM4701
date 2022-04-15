@@ -36,6 +36,8 @@ The rest of the files, which could be accessed [here](https://portland-my.sharep
 ---
 
 ## Dataset Description
+[Access link to dataset hosted on OneDrive](https://portland-my.sharepoint.com/:f:/g/personal/hiuslau5-c_my_cityu_edu_hk/Eogj9_2gFxtOj918hDmexGwBDKyQUOMdAK8f_xekmIRE3w?e=On1J1Z)
+
 Data colletion is possible primarily thanks to [DownloaderForReddit](https://github.com/MalloyDelacroix/DownloaderForReddit). Images are first fetched with the downloader, and then inspected for corruption. Folders are named after the subreddit the images are fetched from. 
 
 As there is a hard limit (1000) on how much posts one could query in each feed category (Hot, New, Top (Day, Week, Month, Year, All), etc.), different datasets are therefore created with different method of fetching. Duplicates are avoided with the downloader.
