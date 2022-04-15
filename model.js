@@ -48,7 +48,7 @@ function load_data() {
         
       }
 
-      if (Math.max == answer[2]){
+      if (Math.max(answer) == answer[2]){
         document.getElementById("penisConclusion").innerHTML = "There probably aren't any penises."
       } else {
         document.getElementById("penisConclusion").innerHTML = "There probably is a penis."
