@@ -9,6 +9,8 @@ var imgDataArray = [];
 var loader = document.querySelector('#loader');
 loader.addEventListener('change', printImage, false);
 
+
+
 function load_data() {
     imgData = ctx.getImageData(0, 0, 299, 299);
     var input = tf.browser.fromPixels(imgData, 3);
@@ -30,7 +32,29 @@ function load_data() {
     var input = tf.tensor4d(imgDataArray, [1, 299, 299, 3], 'float32');
     console.log(input);
     const prediction = model.predict(input);
-    prediction.print();
+    var answer = [];
+
+    prediction.data().then((a)=>{
+      let scoreDisplay = [];
+      scoreDisplay[0] = document.getElementById("massiveScore");
+      scoreDisplay[1] = document.getElementById("averageScore");
+      scoreDisplay[2] = document.getElementById("penisScore");
+      scoreDisplay[3] = document.getElementById("smallScore");
+
+      for (var j = 0; j < a.length; j++){
+        answer[j] = a[j];
+        scoreDisplay[j].innerHTML = (answer[j]*100).toFixed(1) + "%";
+        console.log(answer[j]);
+        
+      }
+
+      if (Math.max == answer[2]){
+        document.getElementById("penisConclusion").innerHTML = "There probably aren't any penises."
+      } else {
+        document.getElementById("penisConclusion").innerHTML = "There probably is a penis."
+      }
+
+    })
   }
 
   function printImage(e){

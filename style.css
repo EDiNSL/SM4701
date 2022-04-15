@@ -87,6 +87,37 @@ body{
 
 }
 
+.score {
+    margin: 0px;
+    margin-top: 20px;
+    padding-top: 10px;
+    font-size: 2.5em;
+    color: #7CC5EE;
+}
+
+.category{
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+#penisornot .category{
+    padding-left: 0px;
+    padding-right: 0px;
+}
+
+.categoryName {
+    margin: 0px;
+}
+
+#penisConclusion{
+    margin: 0px;
+    font-size: 1.5em;
+}
+
+#sizesofpenis {
+    display: flex;
+}
+
 .footer {
     background-color: black;
     background-image: url("david_mod.jpg");
